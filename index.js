@@ -59,7 +59,7 @@ async function getBunnies() {
 
     await page.goto(url);
 
-    await page.waitFor('.result-row');
+    await page.waitForSelector('.result-row');
 
     const results = await page.$$eval('.result-row', rows => {
         return rows.map(row => {
